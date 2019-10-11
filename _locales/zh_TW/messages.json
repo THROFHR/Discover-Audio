@@ -1,0 +1,11 @@
+{
+  "name": {
+    "message": "發現音頻"
+  },
+  "description": {
+    "message": "下載妳在瀏覽器中聽到的任何聲音。"
+  },
+  "down": {
+    "message": "下载"
+  }
+}

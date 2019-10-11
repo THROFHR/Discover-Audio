@@ -1,0 +1,66 @@
+.boy-music-button {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    width: 32px;
+    z-index: 9998;
+    /* display: none; */
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .05);
+}
+.boy-music-button:hover {
+    display: none;
+}
+
+.boy-music-info {
+    position: fixed;
+    left: 20px;
+    width: 120px;
+    top: 50%;
+    z-index: 9999;
+    background: #fff;
+    padding: 10px;
+    display: none;
+    border-radius: 5px;
+    border: solid 2px #f60;
+}
+
+.boy-music-close {
+    width: 20px;
+    height: 20px;
+    border-top: solid 2px #f60;
+    border-right: solid 2px #f60;
+    border-radius: 50%;
+    line-height: 20px;
+    text-align: center;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    background: #fff;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.boy-music-url {
+    width: 100%;
+    min-height: 40px;
+    max-height: 200px;
+    word-break: break-all;
+    font-size: 12px;
+}
+
+.boy-music-href {
+    font-size: 10px;
+    color: #666;
+    display: block;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.boy-music-down {
+    width: 100%;
+    height: 30px;
+    background: #f60;
+    color: #fff;
+    border: none;
+    margin: 5px auto;
+}

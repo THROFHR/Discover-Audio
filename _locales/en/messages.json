@@ -1,0 +1,11 @@
+{
+  "name": {
+    "message": "Discover Audio"
+  },
+  "description": {
+    "message": "Chrome extension to download music what you sound !"
+  },
+  "down": {
+    "message": "DownLoad"
+  }
+}

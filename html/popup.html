@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello</title>
+  <style>
+    li {
+      text-align: -webkit-match-parent;
+      display: list-item;
+    }
+
+    .fav_list {
+      background-color: #fff;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .05);
+      height: 512px;
+      min-width: 256px;
+      overflow-y: scroll;
+    }
+
+    .fav_list_box {
+      box-sizing: border-box;
+      display: block;
+      overflow: hidden;
+      zoom: 1;
+    }
+
+    .fav_list_title {
+      height: 45px;
+      line-height: 45px;
+      /*border-bottom: 1px solid #e0e0e0;*/
+      display: block;
+    }
+
+    .fav_list_title_h3 {
+      display: inline;
+    }
+
+    .fav_num {
+      font-size: 14px;
+      color: #4d4d4d;
+      margin-top: 10px;
+      float: right;
+    }
+
+    .my_fav_con {
+      display: block;
+    }
+
+    .my_fav_list {
+      margin: 0;
+      padding: 0;
+      font-size: 100%;
+      vertical-align: baseline;
+      border: 0;
+      display: block;
+      overflow: hidden;
+      zoom: 1;
+    }
+
+    .my_fav_list_li {
+      padding: 16px 0;
+      font-size: 0;
+      border-top: 1px solid #e0e0e0;
+      list-style: none;
+    }
+
+    .my_fav_list_a {
+      width: 256px;
+      line-height: 24px;
+      font-size: 16px;
+      vertical-align: middle;
+      color: #4d4d4d;
+      text-decoration: none;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      display: inline-block;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .my_fav_list_label {
+      margin-left: 10%;
+      font-size: 16px;
+      vertical-align: middle;
+      display: inline-block;
+    }
+
+    .my_fav_list_label span {
+      color: #ccc;
+      margin-right: 15px;
+      vertical-align: middle;
+      display: inline-block;
+    }
+
+    .cancel_fav {
+      font-style: normal;
+      color: #999;
+      vertical-align: middle;
+      cursor: pointer;
+      display: inline-block;
+    }
+
+    .my_fav_list_a:hover {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="fav_list">
+    <div data-v-357a65ed="" class="fav_list_box">
+      <div class="fav_list_title">
+        <h3 class="fav_list_title_h3">正在下载</h3>
+        <div class="fav_num">
+          共<span id="count">--</span>条
+        </div>
+      </div>
+      <div class="my_fav_con">
+        <div>
+          <ul id="content" class="my_fav_list">
+            
+          </ul>
+          <!---->
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../js/popup.js"></script>
+</body>
+
+</html>

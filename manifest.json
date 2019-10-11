@@ -1,0 +1,39 @@
+{
+  "name": "__MSG_name__",
+  "version": "2019.10.09",
+  "description": "__MSG_description__",
+  "manifest_version": 2,
+  "permissions": [
+    "contextMenus",
+    "webRequest", 
+    "activeTab",
+    "tabs",
+    "webRequestBlocking",
+    "<all_urls>"
+  ],
+  "background": {
+    "scripts": [
+      "js/nedb.min.js",
+      "js/bg.js"
+    ]
+  },
+
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["js/jquery-2.0.2.min.js", "js/content.js"],
+    "css": ["css/css.css"],
+    "run_at": "document_start"
+  }],
+  "web_accessible_resources": [
+    "html/inject.html"
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "default_locale": "zh_CN",
+  "browser_action": {
+    "default_popup": "html/popup.html"
+  }
+}
