@@ -44,8 +44,211 @@
     border: none;
     margin: 5px auto;
   }
+
+  .inject-dom-popup-card {
+    position: fixed;
+    top: 0;
+    z-index: 99999999999999;
+    right: 0;
+    display: none;
+  }
+
+  .inject-dom-popup-card-box {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+  }
+
+  .inject-dom-popup-card-mask {
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .inject-dom-popup-card-main {
+    margin: 20px;
+    min-width: 300px;
+    /* max-width: 500px;
+    width: 50%; */
+    background: #fff;
+    border-radius: 5px;
+    z-index: 1;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+  }
+
+  .inject-dom-popup-card-main .el-input {
+    font-size: 20px;
+    color: #666;
+    padding: 10px;
+    background-color: #fff;
+    background-image: none;
+    border-radius: 4px;
+    border: 1px solid #dcdfe6;
+    box-sizing: border-box;
+    color: #606266;
+    display: inline-block;
+    font-size: inherit;
+    height: 40px;
+    line-height: 40px;
+    outline: none;
+    padding: 0 15px;
+    transition: border-color .2s cubic-bezier(.645, .045, .355, 1);
+    width: 100%;
+  }
+
+  .inject-dom-popup-card-main .el-input:focus {
+    outline: none;
+    border-color: #409eff;
+  }
+
+  .inject-dom-popup-card-main-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .inject-dom-popup-card-main-button {
+    margin: 0 20px;
+    width: 50%;
+    height: 40px;
+    border-radius: 5px;
+    background: #fff;
+    color: #666;
+    font-size: 14px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+  }
+
+  .inject-dom-popup-card-main-button-cancel {
+    background: #909399;
+    color: #fff;
+  }
+
+  .inject-dom-popup-card-main-button-comfirm {
+    background: #409eff;
+    color: #fff;
+  }
+
+  .inject-dom-popup-card-main-button:hover {
+    opacity: 0.7;
+  }
+
+  .inject-dom-popup-card-main-status {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    font-size: 32px;
+    justify-content: center;
+    align-items: center;
+    background: #d8d8d8;
+    color: #666;
+  }
+
+  .lds-ellipsis {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+
+  .lds-ellipsis div {
+    position: absolute;
+    top: 33px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #fff;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+  }
+
+  .lds-ellipsis div:nth-child(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+  }
+
+  .lds-ellipsis div:nth-child(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+
+  .lds-ellipsis div:nth-child(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+
+  .lds-ellipsis div:nth-child(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+  }
+
+  @keyframes lds-ellipsis1 {
+    0% {
+      transform: scale(0);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes lds-ellipsis3 {
+    0% {
+      transform: scale(1);
+    }
+
+    100% {
+      transform: scale(0);
+    }
+  }
+
+  @keyframes lds-ellipsis2 {
+    0% {
+      transform: translate(0, 0);
+    }
+
+    100% {
+      transform: translate(24px, 0);
+    }
+  }
 </style>
 <div class="inject-dom">
+
+  <div class="inject-dom-popup-card">
+    <div class="inject-dom-popup-card-box">
+      <div class="inject-dom-popup-card-main">
+        <input id="inject-dom-popup-card-main-input-title" class="el-input" type="text" id="name" autocomplete="off"
+          placeholder="保存名称...">
+        <div class="inject-dom-popup-card-main-buttons">
+          <div class="inject-dom-popup-card-main-button inject-dom-popup-card-main-button-cancel">取消</div>
+          <div class="inject-dom-popup-card-main-button inject-dom-popup-card-main-button-comfirm">确定</div>
+        </div>
+
+        <div class="inject-dom-popup-card-main-status">
+          <div class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <span>已加入下载队列</span>
+        </div>
+      </div>
+      <div class="inject-dom-popup-card-mask"></div>
+    </div>
+  </div>
   <div class="inject-action" id="inject-action">
     <img
       src="data:image/png;base64,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" />
